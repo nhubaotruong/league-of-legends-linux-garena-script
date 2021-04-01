@@ -1,5 +1,7 @@
 import psutil
 import os
+import shlex
+import subprocess
 
 riot_service_process_name = "RiotClientServices.exe"
 
@@ -17,6 +19,12 @@ wine_exe = (
 
 # Use gamemode
 use_gamemoderun = True
+
+# Enable esync
+use_esync = True
+
+# Enable fsync
+use_fsync = True
 
 
 def findProcessIdByName(processName):
@@ -44,6 +52,10 @@ try:
 except Exception:
     print("Cannot get Garena Token")
 
+# Exit if no riot_argument is found
+if not riot_argument:
+    quit()
+
 # Kill the current RiotClientServices.exe
 p = psutil.Process(riot_process.get("pid"))
 p.kill()
@@ -55,6 +67,6 @@ os.system("wineserver -k")
 # Start game using correct setup
 # Keep in mind the client will take awhile to start, after that you can play like normal
 # No garena while playing though
-os.system(
-    f'{"gamemoderun " if use_gamemoderun else ""}"{wine_exe}" "{game_path}" {riot_argument} & "{launchhelper}"'
-)
+launch_command = f'env WINEPREFIX={WINEPREFIX} WINEESYNC={1 if use_esync else 0} WINEFSYNC={1 if use_fsync else 0} {"gamemoderun " if use_gamemoderun else ""}"{wine_exe}" "{game_path}" {riot_argument} & "{launchhelper}"'
+# detached_process = subprocess.Popen(shlex.split(launch_command), start_new_session=True)
+os.system(launch_command)
