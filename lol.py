@@ -4,9 +4,11 @@ import shlex
 import subprocess
 import yaml
 import glob
+import sqlite3
 
 riot_service_process_name = "RiotClientServices.exe"
 
+# Don't need these if using lutris
 HOME = os.getenv("HOME")
 # WINEPREFIX create by https://lutris.net/games/league-of-legends/
 launchhelper = HOME + "/Games/league-of-legends/launchhelper.sh"
@@ -84,8 +86,22 @@ with open(LUTRIS_LOL_CONFIG_FILE, "w") as f:
     except yaml.YAMLError as exc:
         print(exc)
 
+lutris_db_path = HOME + "/.local/share/lutris"
+lutris_db_name = "pga.db"
+conn = sqlite3.connect(lutris_db_path + "/" + lutris_db_name)
+c = conn.cursor()
+c.execute("SELECT id FROM games WHERE slug='league-of-legends'")
+try:
+    game_id =  c.fetchone()[0]
+except Exception:
+    print("No league of legends install from lutris found")
+    quit()
+
+conn.close()
+
+print(f"lutris game id: {game_id}")
 # Update this to your LOL game id in lutris
-launch_command = "lutris lutris:rungameid/1"
+launch_command = f"lutris lutris:rungameid/{game_id}"
 os.system(launch_command)
 
 # Kill Garena
