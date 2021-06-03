@@ -1,7 +1,5 @@
 import psutil
 import os
-import shlex
-import subprocess
 import yaml
 import glob
 import sqlite3
@@ -100,7 +98,6 @@ except Exception:
 conn.close()
 
 print(f"lutris game id: {game_id}")
-# Update this to your LOL game id in lutris
 launch_command = f"lutris lutris:rungameid/{game_id}"
 os.system(launch_command)
 
@@ -111,5 +108,5 @@ os.system(launch_command)
 # Keep in mind the client will take awhile to start, after that you can play like normal
 # No garena while playing though
 # launch_command = f'env WINEPREFIX={WINEPREFIX} WINEESYNC={1 if use_esync else 0} WINEFSYNC={1 if use_fsync else 0} {"gamemoderun " if use_gamemoderun else ""}"{wine_exe}" "{game_path}" {riot_argument} & "{launchhelper}"'
-# detached_process = subprocess.Popen(shlex.split(launch_command), start_new_session=True)
 # os.system(launch_command)
+
