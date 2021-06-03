@@ -70,6 +70,7 @@ pip3 install psutil pyyaml glob
 ```
 python3 lol.py
 ```
+* Return to Garena and press **Play**
 * Wait for a while, it may take long
 
 # Result
