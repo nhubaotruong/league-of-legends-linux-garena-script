@@ -53,11 +53,11 @@ Also, enable **Disable proxy when browsing** for better Garena experience (it su
 ![Garena setting](images/garena.png)
 
 ## Config LOL Lutris
-Change the Executable in LOL to **RiotClientServices.exe** from the LOL-Garena installed location. For example:
+Change the Executable in LOL to **LeagueClient.exe** (thanks to [abiswas97](https://github.com/abiswas97)) from the LOL-Garena installed location. For example:
 
-> /home/nhubao/Games/league-of-legends/drive_c/Games/32787/Riot Client/RiotClientServices.exe
+> /home/nhubao/Games/league-of-legends/drive_c/Games/32787/LeagueClient/LeagueClient.exe
 
-![Lutris setting](images//lutris.png)
+![Lutris setting](images/lutris_new.png)
 
 ## Start the game
 * Download the python script (lol.py)
