@@ -1,7 +1,6 @@
 import psutil
 import os
 import yaml
-import glob
 import sqlite3
 
 riot_service_process_name = "RiotClientServices.exe"
@@ -68,7 +67,8 @@ p.kill()
 
 # Start game using lutris
 LUTRIS_CONFIG_FOLDER = HOME + "/.config/lutris/games/"
-LUTRIS_LOL_CONFIG_FILE = glob.glob(LUTRIS_CONFIG_FOLDER + "league*.yml")[0]
+# LUTRIS_LOL_CONFIG_FILE = glob.glob(LUTRIS_CONFIG_FOLDER + "league*.yml")[0]
+LUTRIS_LOL_CONFIG_FILE = LUTRIS_CONFIG_FOLDER + os.popen(f'ls {LUTRIS_CONFIG_FOLDER} | grep -i -E league.*.yml').read().strip()
 
 with open(LUTRIS_LOL_CONFIG_FILE, "r") as f:
     try:
