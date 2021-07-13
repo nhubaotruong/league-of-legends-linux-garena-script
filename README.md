@@ -63,7 +63,7 @@ Change the Executable in LOL to **LeagueClient.exe** (thanks to [abiswas97](http
 * Download the python script (lol.py)
 * Install the dependencies:
 ```
-pip3 install psutil pyyaml glob
+pip3 install psutil pyyaml
 ```
 * Start Garena
 * Open terminal and run the script
