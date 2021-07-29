@@ -30,9 +30,6 @@ sudo dnf install lutris wine winetricks
 sudo dnf groupinstall "C Development Tools and Libraries"
 sudo dnf groupinstall "Development Tools"
 ```
-```
-sudo dnf install wine
-```
 ## Install Lutris
 **Follow Lutris official docs here:** [https://lutris.net/downloads/](https://lutris.net/downloads/)
 
