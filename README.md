@@ -75,5 +75,8 @@ python3 lol.py
 * Return to Garena and press **Play**
 * Wait for a while, it may take long
 
-# Result
+## Result
 ![LOL on Linux](images/result.png)
+
+## Disclaimer
+* If the game crash with some message that saids `core dump...` just press `OK` and wait a bit, the game will continue at the exact state
