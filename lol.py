@@ -57,7 +57,7 @@ def main():
     if not riot_argument:
         quit()
 
-    print(f"Garena token got from {riot_service_process_name} {riot_argument}")
+    print(f"Garena token got from {riot_service_process_name}: {riot_argument}")
 
     # Kill the current RiotClientServices.exe
     p = psutil.Process(riot_process.get("pid"))
@@ -65,13 +65,22 @@ def main():
 
     # Start game using lutris
     HOME = os.getenv("HOME")
+
+    LUTRIS_DB_PATH = HOME + "/.local/share/lutris"
+    LUTRIS_DB_NAME = "pga.db"
+    conn = sqlite3.connect(LUTRIS_DB_PATH + "/" + LUTRIS_DB_NAME)
+    c = conn.cursor()
+    c.execute("SELECT id,configpath FROM games WHERE slug='league-of-legends'")
+    try:
+        game_id, configpath = c.fetchone()
+        conn.close()
+    except Exception:
+        print("No league of legends install from lutris found")
+        conn.close()
+        quit()
+
     LUTRIS_CONFIG_FOLDER = HOME + "/.config/lutris/games/"
-    LUTRIS_LOL_CONFIG_FILE = (
-        LUTRIS_CONFIG_FOLDER
-        + os.popen(f"ls {LUTRIS_CONFIG_FOLDER} | grep -i -E league.*.yml")
-        .read()
-        .strip()
-    )
+    LUTRIS_LOL_CONFIG_FILE = LUTRIS_CONFIG_FOLDER + configpath + ".yml"
 
     with open(LUTRIS_LOL_CONFIG_FILE, "r") as f:
         try:
@@ -87,20 +96,6 @@ def main():
         except yaml.YAMLError as exc:
             print(exc)
 
-    LUTRIS_DB_PATH = HOME + "/.local/share/lutris"
-    LUTRIS_DB_NAME = "pga.db"
-    conn = sqlite3.connect(LUTRIS_DB_PATH + "/" + LUTRIS_DB_NAME)
-    c = conn.cursor()
-    c.execute("SELECT id FROM games WHERE slug='league-of-legends'")
-    try:
-        game_id = c.fetchone()[0]
-        conn.close()
-    except Exception:
-        print("No league of legends install from lutris found")
-        conn.close()
-        quit()
-
-    # print(f"lutris game id: {game_id}")
     print("Starting game with current config:")
     print(f"- Wine version: {game_config.get('wine',{}).get('version')}")
     print(f"- Executable: {game_config.get('game',{}).get('exe')}")
