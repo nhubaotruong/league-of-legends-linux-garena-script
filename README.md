@@ -80,7 +80,7 @@ python3 lol.py
 ## Result
 ![LOL on Linux](images/result.png)
 
-## Update new wine-lol
+## Update new wine-lol (This is not the wine-lol package in the AUR)
 - It currently only have prebuilt for Ubuntu/Debian based and PKGBUILD for arch based: https://github.com/ekistece/wine-lol
 - After installing both `wine-lol` and `wine-lol-glibc`, change the wine version of LOL in lutris to custom and enter this path: `/opt/wine-lol/bin/wine`
 
