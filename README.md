@@ -1,3 +1,5 @@
+# Those who cannot start LOL after the 11.17 update check here: [Update to newer wine-lol version](#update-new-wine-lol)
+
 # Note: This is the way I personally use to start LOL on Linux, through lutris. The code for starting game without Lutris is still in the script though
 ## Wine Dependency (Maybe redundant, but just to be sure nothing goes wrong)
 **Source:** [https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/)
@@ -77,6 +79,10 @@ python3 lol.py
 
 ## Result
 ![LOL on Linux](images/result.png)
+
+## Update new wine-lol
+- It currently only have prebuilt for Ubuntu/Debian based and PKGBUILD for arch based: https://github.com/ekistece/wine-lol
+- After installing both `wine-lol` and `wine-lol-glibc`, change the wine version of LOL in lutris to custom and enter this path: `/opt/wine-lol/bin/wine`
 
 ## Disclaimer
 * If the game crash with some message that saids `core dump...` just press `OK` and wait a bit, the game will continue at the exact state
