@@ -1,7 +1,7 @@
 ## Please note that you are using this project on your own discretion, we don't hold any responsibility for any actions taken on you/on your account
 ## Those who cannot start LOL after the 11.17 update check here: [Update to newer wine-lol version](#update-new-wine-lol)
 ## You can also refer to [r/leagueoflinux](https://www.reddit.com/r/leagueoflinux/) for frequent updates regarding the game on linux
-## The Garena Client is almost exclusively intended for Asia (Includes south, south-east, east, etc). If you do not belong to the aforementioned regions (Like NA, EU, etc.), Please use the Riot Client instead(What Lutris ships by default)
+## The Garena Client is almost exclusively intended for Asia (Includes south, south-east, east, etc). If you do not belong to the aforementioned regions (Like NA, EU, etc.), Please use the Riot Client instead (What Lutris ships by default)
 ## This is the way I personally use to start LOL on Linux, through Lutris. The code for starting game without Lutris is still in the script though.
 ## Wine Dependency (Maybe redundant, but just to be sure nothing goes wrong)
 **Source:** [https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/)
