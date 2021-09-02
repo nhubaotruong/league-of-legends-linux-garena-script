@@ -1,4 +1,6 @@
 # Those who cannot start LOL after the 11.17 update check here: [Update to newer wine-lol version](#update-new-wine-lol)
+# Instructions for getting the latest wine-lol are [here](https://old.reddit.com/r/leagueoflinux/comments/pb4wqy/did_the_upgrade_to_cef91_as_part_of_1117_break/hab2oe0/)
+# You can also refer to [r/leagueoflinux](https://www.reddit.com/r/leagueoflinux/) for frequent updates regarding the game on linux
 
 # Note: This is the way I personally use to start LOL on Linux, through lutris. The code for starting game without Lutris is still in the script though
 ## Wine Dependency (Maybe redundant, but just to be sure nothing goes wrong)
@@ -52,12 +54,12 @@ sudo dnf groupinstall "Development Tools"
 ## Install LOL from Garena
 Open Garena from lutris and install LOL like you normally do on Windows. 
 
-Also, enable **Disable proxy when browsing** for better Garena experience (it sucks)
+Also, enable **Disable proxy when browsing** for better Garena experience (it sucks by default)
 
 ![Garena setting](images/garena.png)
 
 ## Config LOL Lutris
-Change the Executable in LOL to **LeagueClient.exe** (thanks to [abiswas97](https://github.com/abiswas97)) from the LOL-Garena installed location. For example:
+Change the default Executable in Riot LOL(the default LOL Installation for Lutris) to **LeagueClient.exe** (thanks to [abiswas97](https://github.com/abiswas97)) from the LOL-Garena installed location. For example:
 
 > /home/nhubao/Games/league-of-legends/drive_c/Games/32787/LeagueClient/LeagueClient.exe
 
@@ -70,12 +72,12 @@ Change the Executable in LOL to **LeagueClient.exe** (thanks to [abiswas97](http
 pip3 install psutil pyyaml
 ```
 * Start Garena
-* Open terminal and run the script
+* Open terminal, ```cd``` into the directory where you have saved this project(Ex: /home/nhubao/league-of-legends-linux-garena-script-main) and run the script
 ```
 python3 lol.py
 ```
 * Return to Garena and press **Play**
-* Wait for a while, it may take long
+* Wait for a while, it may take some time load in
 
 ## Result
 ![LOL on Linux](images/result.png)
