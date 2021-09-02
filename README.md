@@ -1,5 +1,4 @@
 # Those who cannot start LOL after the 11.17 update check here: [Update to newer wine-lol version](#update-new-wine-lol)
-# Instructions for getting the latest wine-lol are [here](https://old.reddit.com/r/leagueoflinux/comments/pb4wqy/did_the_upgrade_to_cef91_as_part_of_1117_break/hab2oe0/)
 # You can also refer to [r/leagueoflinux](https://www.reddit.com/r/leagueoflinux/) for frequent updates regarding the game on linux
 
 # Note: This is the way I personally use to start LOL on Linux, through lutris. The code for starting game without Lutris is still in the script though
@@ -82,7 +81,12 @@ python3 lol.py
 ## Result
 ![LOL on Linux](images/result.png)
 
-## Update new wine-lol (This is not the wine-lol package in the AUR)
+## Update new wine-lol
+1. Use `lutris-ge-lol` from lutris
+- Go to `Manage runners` -> `Manage Versions` and install the latest `lutris-ge-lol`
+- Change the wine version of LOL to the one you just install
+
+2. Custom `wine-lol`
 - It currently only have prebuilt for Ubuntu/Debian based and PKGBUILD for arch based: https://github.com/ekistece/wine-lol
 - After installing both `wine-lol` and `wine-lol-glibc`, change the wine version of LOL in lutris to custom and enter this path: `/opt/wine-lol/bin/wine`
 
