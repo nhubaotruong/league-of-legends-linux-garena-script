@@ -59,7 +59,7 @@ Also, enable **Disable proxy when browsing** for better Garena experience (it su
 ![Garena setting](images/garena.png)
 
 # Config LOL Lutris
-Change the default Executable in Riot LOL(the default LOL Installation for Lutris) to **LeagueClient.exe** (thanks to [abiswas97](https://github.com/abiswas97)) from the LOL-Garena installed location. 
+Change the default Executable in Riot LOL(the default LOL Installation for Lutris) to **RiotClientServices.exe** (sorry [abiswas97](https://github.com/abiswas97), **LeagueClient.exe** does work after 11.18 update) from the LOL-Garena installed location. 
 
 - ## For example:
 
@@ -67,9 +67,9 @@ Riot LOL Installation(How LOL comes by default from Lutris):
 > /home/nhubao/Games/league-of-legends/drive_c/Riot Games/League of Legends/LeagueClient.exe
 
 Change the above directory to the one below(How it should look like for Garena LOL to work)
-> /home/nhubao/Games/garena/drive_c/Garena/Games/32771/LeagueClient/LeagueClient.exe
+> /home/nhubao/Games/garena/drive_c/Garena/Games/32771/Riot Client/RiotClientServices.exe
 
-![Lutris setting](images/lutris_new.png)
+![Lutris setting](images/lutris_riot_client.png)
 # Installing the necessary scripts
 * You can either directly download this repository by downloading the .zip/.tar.gz file and extracting it 
 
