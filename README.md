@@ -43,7 +43,7 @@ sudo dnf groupinstall "Development Tools"
 **Follow Lutris official docs here:** [https://lutris.net/downloads/](https://lutris.net/downloads/)
 
 - ## Install Garena and LOL from Lutris
-**Garena:** [https://lutris.net/games/garena/](https://lutris.net/games/garena/)
+**Garena:** Copy this and paste into browser `lutris:garena-garena-vn-20-test`
 
 **Note for Garena:** After installing Garena, do not login, close the window
 
