@@ -80,14 +80,20 @@ Now click Install and it should now start installing!
 
 If for some reason the installation doesn't complete via the Garena Client, try the folllowing method:-
 
-1) Head over to [this link (If you wish to use the English language)](https://lol.garena.com/download)
-   Or use [this link (If you wish to use the Vietnamese version](https://lienminh.garena.vn/download)
+1) Head over to the download link of your region
+   - Singapore, Malaysia, and Indonesia: [https://lol.garena.com/download](https://lol.garena.com/download)
+   - Vietnam: [https://lienminh.garena.vn/download](https://lienminh.garena.vn/download)
+   - Phillipines: [https://lol.garena.ph/download](https://lol.garena.ph/download)
+   - Taiwan, Hong Kong, and Macau: [https://lol.garena.tw/download](https://lol.garena.tw/download)
+   - Thailand: [https://lol.garena.in.th/download](https://lol.garena.in.th/download)
 
 If you wish to inform us about different language options, please raise an issue and we will add it!
 
 2) Click on Game Download
 
 ![image](https://user-images.githubusercontent.com/45941793/134811763-be867baf-a7a5-4f64-b001-e0bece61ca1a.png)
+
+`It's the Ezreal image for other regions`
 
 3) Save the file and wait for it to install
 
