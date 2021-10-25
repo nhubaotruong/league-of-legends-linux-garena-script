@@ -6,7 +6,7 @@
 ## Wine Dependency (Maybe redundant, but just to be sure nothing goes wrong)
 **Source:** [https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/)
 
-### Antergos/Manjaro/Arch derivatives (enable multilib in pacman.conf):
+### EndeavourOS/Manjaro/Arch derivatives (enable multilib in pacman.conf):
 ```
 sudo pacman -Sy
 sudo pacman -S wine-staging winetricks
