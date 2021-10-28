@@ -1,0 +1,112 @@
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 18124,
+            "game_id": 25042,
+            "game_slug": "garena",
+            "name": "Garena",
+            "year": 2017,
+            "user": "jccultima123",
+            "runner": "wine",
+            "slug": "garena-20",
+            "version": "2.0",
+            "description": "Garena for all",
+            "notes": "Don't use VN/SG/PH executables",
+            "created_at": "2020-01-29T14:07:47.501000Z",
+            "updated_at": "2021-09-16T09:32:28.266781Z",
+            "draft": false,
+            "published": true,
+            "published_by": 55808,
+            "rating": "",
+            "steamid": null,
+            "gogid": null,
+            "gogslug": "",
+            "humbleid": "",
+            "humblestoreid": "",
+            "humblestoreid_real": "",
+            "script": {
+                "files": [
+                    {
+                        "installer": "http://cdn.gxx.garenanow.com/gxx/pc/installer/Garena-v2.0.exe"
+                    }
+                ],
+                "game": {
+                    "exe": "$GAMEDIR/drive_c/Program Files (x86)/Garena/Garena/Garena.exe",
+                    "prefix": "$GAMEDIR"
+                },
+                "installer": [
+                    {
+                        "task": {
+                            "description": "Creating Wine prefix",
+                            "name": "create_prefix",
+                            "prefix": "$GAMEDIR"
+                        }
+                    },
+                    {
+                        "task": {
+                            "args": "$installer",
+                            "description": "Do not log in during installation, just close the installation client once it will finish downloading 2.1 Go.",
+                            "executable": "$GAMEDIR/drive_c/windows/explorer.exe",
+                            "include_processes": "explorer.exe",
+                            "name": "wineexec"
+                        }
+                    },
+                    {
+                        "task": {
+                            "name": "winekill",
+                            "prefix": "$GAMEDIR"
+                        }
+                    },
+                    {
+                        "task": {
+                            "key": "GrabFullScreen",
+                            "name": "set_regedit",
+                            "path": "HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver",
+                            "prefix": "$GAMEDIR",
+                            "value": "Y"
+                        }
+                    },
+                    {
+                        "task": {
+                            "key": "UseXVidMode",
+                            "name": "set_regedit",
+                            "path": "HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver",
+                            "prefix": "$GAMEDIR",
+                            "value": "N"
+                        }
+                    },
+                    {
+                        "task": {
+                            "key": "background",
+                            "name": "set_regedit",
+                            "path": "HKEY_CURRENT_USER\\Control Panel\\Colors\\",
+                            "prefix": "$GAMEDIR",
+                            "type": "REG_SZ",
+                            "value": "40 40 40"
+                        }
+                    }
+                ],
+                "require-binaries": "zenity, openssl",
+                "system": {
+                    "disable_compositor": false,
+                    "env": {
+                        "DXVK_LOG_LEVEL": "none",
+                        "DXVK_STATE_CACHE_PATH": "$GAMEDIR",
+                        "STAGING_SHARED_MEMORY": 1,
+                        "WINE_LARGE_ADDRESS_AWARE": 1,
+                        "__GL_SHADER_DISK_CACHE": 1,
+                        "__GL_SHADER_DISK_CACHE_PATH": "$GAMEDIR",
+                        "__GL_THREADED_OPTIMIZATIONS": 1
+                    }
+                },
+                "wine": {
+                    "MouseWarpOverride": "enable",
+                    "version": "lutris-6.14-4-x86_64"
+                }
+            }
+        }
+    ]
+}
