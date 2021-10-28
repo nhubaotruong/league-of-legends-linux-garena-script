@@ -64,17 +64,24 @@ sudo dnf groupinstall "Development Tools"
 **Follow Lutris official docs here:** [https://lutris.net/downloads/](https://lutris.net/downloads/)
 
 ## Install Garena and LOL from Lutris
-**Garena:** 
-- Clone this repo
-- Install Garena using command (I'm too lazy to put this on lutris.net :( )
-```bash
-lutris -i garena.json
-```
-**Note for Garena:** After installing Garena, do not login, close the window
+- Using script (Close lutris after each installation finishes):
+   ```bash
+   curl https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/install.sh | bash
+   ```
+   **Note for Garena:** After installing Garena, do not login, close the window\
+   **Note for LOL:** when the installer for LOL NA comes up, just close it, you don't need to install it, we just need the environment
+- Manual:\
+   **Garena:** 
+   - Clone this repo
+   - Install Garena using command (I'm too lazy to put this on lutris.net :( )
+   ```bash
+   lutris -i garena.json
+   ```
+   **Note for Garena:** After installing Garena, do not login, close the window
 
-**LOL:** https://lutris.net/games/league-of-legends/
+   **LOL:** https://lutris.net/games/league-of-legends/
 
-**Note for LOL:** when the installer for LOL NA comes up, just close it, you don't need to install it, we just need the environment
+   **Note for LOL:** when the installer for LOL NA comes up, just close it, you don't need to install it, we just need the environment
 
 # Install LOL from Garena
 Open Garena from lutris and install LOL like you normally do on Windows. 
