@@ -11,14 +11,15 @@ def main():
         shell=True,
     )
 
+    command = "zenity --info --no-wrap --text='Close all lutris windows after everything is done'"
+    subprocess.run(command, shell=True)
+
     while True:
         time.sleep(1)
         res = subprocess.run("pgrep -f lutris", shell=True, capture_output=True)
         if res.stdout == b"" and res.stderr == b"":
             break
     
-    command = "zenity --info --no-wrap --text='Close all lutris windows'"
-    subprocess.run(command, shell=True)
     command2 = "zenity --info --no-wrap --text='Open Garena and install LOL\nThen back to the github (https://github.com/nhubaotruong/league-of-legends-linux-garena-script) for config guide'"
     subprocess.run(command2, shell=True)
     
