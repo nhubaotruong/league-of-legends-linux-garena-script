@@ -3,7 +3,7 @@ import os
 import yaml
 import sqlite3
 import re
-
+import time
 
 def find_process_id_by_name(processName):
     """
@@ -12,6 +12,7 @@ def find_process_id_by_name(processName):
     """
     # Iterate over the all the running process
     while True:
+        time.sleep(1)
         for proc in psutil.process_iter():
             try:
                 pinfo = proc.as_dict(attrs=["cmdline", "name", "pid"])
@@ -95,6 +96,7 @@ def main():
             yaml.dump(game_config, f, default_flow_style=False)
         except yaml.YAMLError as exc:
             print(exc)
+            quit()
 
     print("Starting game with current config:")
     print(f"- Wine version: {game_config.get('wine',{}).get('version')}")

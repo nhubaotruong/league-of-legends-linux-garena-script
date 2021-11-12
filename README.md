@@ -14,24 +14,24 @@
 
 ### EndeavourOS/Manjaro/Arch derivatives (enable multilib in pacman.conf):
 ```bash
-sudo pacman -Sy wine-staging winetricks giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo libxcomposite lib32-libxcomposite libxinerama lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader libjpeg6-turbo lib32-libjpeg6-turbo
+sudo pacman -Sy wine-staging winetricks giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnutls lib32-gnutls mpg123 lib32-mpg123 openal lib32-openal v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib libjpeg-turbo lib32-libjpeg-turbo libxcomposite lib32-libxcomposite libxinerama lib32-libxinerama ncurses lib32-ncurses opencl-icd-loader lib32-opencl-icd-loader libxslt lib32-libxslt libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader libjpeg6-turbo lib32-libjpeg6-turbo python-magic gamemode --needed
 ```
 - For Intel GPU (integrated):
 ```bash
-sudo pacman -S vulkan-intel lib32-vulkan-intel
+sudo pacman -Sy vulkan-intel lib32-vulkan-intel --needed
 ```
 - For AMD GPU (interated and dedicated)
 ```bash
 # Opensource amdgpu driver
-sudo pacman -S vulkan-radeon lib32-vulkan-radeon
+sudo pacman -Sy vulkan-radeon lib32-vulkan-radeon --needed
 
 # Proprietary amdgpu-pro driver
-sudo pacman -S amdvlk lib32-amdvlk
+sudo pacman -Sy amdvlk lib32-amdvlk --needed
 # Or install vulkan-amdgpu-pro and lib32-vulkan-amdgpu-pro (From AUR)
 ```
 - For NVIDIA GPU (help wanted to verify)
 ```bash
-sudo pacman -S nvidia-utils lib32-nvidia-utils
+sudo pacman -Sy nvidia-utils lib32-nvidia-utils nvidia-prime --needed
 ```
 ### Solus (help wanted to verify):
 ```
@@ -60,28 +60,39 @@ sudo dnf install lutris wine winetricks
 sudo dnf groupinstall "C Development Tools and Libraries"
 sudo dnf groupinstall "Development Tools"
 ```
-# Install Lutris
-**Follow Lutris official docs here:** [https://lutris.net/downloads/](https://lutris.net/downloads/)
+## Python dependencies
+```bash
+pip3 install psutil pyyaml
+```
+# Install Lutris, Garena, LOL
+- **Follow Lutris official docs here:** [https://lutris.net/downloads/](https://lutris.net/downloads/)
 
-## Install Garena and LOL from Lutris
-- Using script (Close lutris after each installation finishes):
-   ```bash
-   curl https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/install.sh | bash
-   ```
-   **Note for Garena:** After installing Garena, do not login, close the window\
-   **Note for LOL:** when the installer for LOL NA comes up, just close it, you don't need to install it, we just need the environment
-- Manual:\
-   **Garena:** 
-   - Clone this repo
-   - Install Garena using command (I'm too lazy to put this on lutris.net :( )
-   ```bash
-   lutris -i garena.json
-   ```
-   **Note for Garena:** After installing Garena, do not login, close the window
+- **Install Garena and LOL from Lutris**\
+Using script (Close lutris after installation finishes):
+```bash
+curl https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/install.py | python
+```
+**Note for Garena:** After installing Garena, do not login, close the window\
+**Note for LOL:** when the installer for LOL NA comes up, just close it, you don't need to install it, we just need the environment
 
-   **LOL:** https://lutris.net/games/league-of-legends/
+- Install LOL from Garena like below
+- Config using script (You can skip to [Installing the necessary scripts](#installing-the-necessary-scripts) after running this):
+```bash
+curl https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/config.py | python
+```
 
-   **Note for LOL:** when the installer for LOL NA comes up, just close it, you don't need to install it, we just need the environment
+**Alternatively, install Garena and LOL manually**:
+**Garena:** 
+- Clone this repo
+- Install Garena using command (I'm too lazy to put this on lutris.net :( )
+```bash
+lutris -i garena.json
+```
+**Note for Garena:** After installing Garena, do not login, close the window
+
+**LOL:** https://lutris.net/games/league-of-legends/
+
+**Note for LOL:** when the installer for LOL NA comes up, just close it, you don't need to install it, we just need the environment
 
 # Install LOL from Garena
 Open Garena from lutris and install LOL like you normally do on Windows. 
@@ -89,7 +100,7 @@ Open Garena from lutris and install LOL like you normally do on Windows.
 Also, enable **Disable proxy when browsing** for better Garena experience (it sucks by default)
 
 ![Garena setting](images/garena.png)
- - ## Change the installation directory
+ - ## Change the installation directory (Optional, recommended to just leave default)
 Open the Wine Prefix directory (where your Garena is actually installed)
 
 For ex: `/home/nhubao/Games/garena/drive_c`
@@ -149,9 +160,15 @@ For Ex: `/home/nhubao/Games/garena-vn/drive_c/fuck u garena`
 ![image](https://user-images.githubusercontent.com/45941793/134812710-5d4cbb26-6cec-47ab-b661-9aba447dd4b4.png)
 
 # Config LOL Lutris
+
+## Using script
+```bash
+curl https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/config.py | python
+```
+
 Change the default Executable in Riot LOL(the default LOL Installation for Lutris) to **RiotClientServices.exe** (sorry [abiswas97](https://github.com/abiswas97), **LeagueClient.exe** does work after 11.18 update) from the LOL-Garena installed location. 
 
-- ## For example:
+## Manual:
 
 Riot LOL Installation(How LOL comes by default from Lutris):
 > /home/nhubao/Games/league-of-legends/drive_c/Riot Games/League of Legends/LeagueClient.exe
@@ -169,10 +186,6 @@ OR
 git clone https://github.com/nhubaotruong/league-of-legends-linux-garena-script.git
 ```
 # Start the game
-* Install the following dependencies (This is a one-time step):
-```bash
-pip3 install psutil pyyaml
-```
 * Start Garena
 * Open terminal, ```cd``` into the directory where you have saved this repository(Ex: /home/nhubao/league-of-legends-linux-garena-script-main) and run the following script:
 ```
