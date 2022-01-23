@@ -1,3 +1,5 @@
+## For the old python script, checkout branch [`main-python`](https://github.com/nhubaotruong/league-of-legends-linux-garena-script/tree/main-python). This is now using an AppImage file (bash script inside) zero dependency
+---
 ## Help wanted: Please help me with the required libs on Ubuntu, Fedora, Solus, etc... and testing with NVIDIA gpus (on laptop and desktop). I'm only familiar with Arch libs and AMD gpus (Intel should be similar)
 ---
 ## Please note that you are using this project on your own discretion, we don't hold any responsibility for any actions taken on you/on your account
@@ -8,6 +10,8 @@
 ## The Garena Client is almost exclusively intended for Asia (Includes south, south-east, east, etc). If you do not belong to the aforementioned regions (Like NA, EU, etc.), Please use the Riot Client instead (What Lutris ships by default)
 ---
 ## This is the way I personally use to start LOL on Linux, through Lutris. The code for starting game without Lutris is still in the script though.
+---
+## I know that the Lutris Garena works ootb right now, but it has problem for me, namely the client does not show after a game, so I still keep this around
 ---
 ## Wine Dependency (Maybe redundant, but just to be sure nothing goes wrong)
 **Source:** [https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/](https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/)
@@ -65,34 +69,7 @@ sudo dnf groupinstall "Development Tools"
 pip3 install psutil pyyaml
 ```
 # Install Lutris, Garena, LOL
-- **Follow Lutris official docs here:** [https://lutris.net/downloads/](https://lutris.net/downloads/)
-
-- **Install Garena and LOL from Lutris**\
-Using script (Close lutris after installation finishes):
-```bash
-curl https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/install.py | python
-```
-**Note for Garena:** After installing Garena, do not login, close the window\
-**Note for LOL:** when the installer for LOL NA comes up, just close it, you don't need to install it, we just need the environment
-
-- Install LOL from Garena like below
-- Config using script (You can skip to [Installing the necessary scripts](#installing-the-necessary-scripts) after running this):
-```bash
-curl https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/config.py | python
-```
-
-**Alternatively, install Garena and LOL manually**:
-**Garena:** 
-- Clone this repo
-- Install Garena using command (I'm too lazy to put this on lutris.net :( )
-```bash
-lutris -i garena.json
-```
-**Note for Garena:** After installing Garena, do not login, close the window
-
-**LOL:** https://lutris.net/games/league-of-legends/
-
-**Note for LOL:** when the installer for LOL NA comes up, just close it, you don't need to install it, we just need the environment
+- Down
 
 # Install LOL from Garena
 Open Garena from lutris and install LOL like you normally do on Windows. 

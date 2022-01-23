@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=lol
+Exec=lol.sh
+Type=Application
+Categories=Utility
+Icon=lol
