@@ -64,12 +64,18 @@ sudo dnf install lutris wine winetricks
 sudo dnf groupinstall "C Development Tools and Libraries"
 sudo dnf groupinstall "Development Tools"
 ```
-## Python dependencies
-```bash
-pip3 install psutil pyyaml
-```
 # Install Lutris, Garena, LOL
-- Down
+- Follow Lutris official docs here: https://lutris.net/downloads/ to install lutris on your distro
+- Download the latest AppImage file from https://github.com/nhubaotruong/league-of-legends-linux-garena-script/releases.
+- Give it execute permission
+```bash
+chmod +x lol-x86_64.AppImage
+```
+- Run
+```bash
+./lol-x86_64.AppImage install
+```
+After finishing each step, close all lutris windows
 
 # Install LOL from Garena
 Open Garena from lutris and install LOL like you normally do on Windows. 
@@ -140,10 +146,8 @@ For Ex: `/home/nhubao/Games/garena-vn/drive_c/fuck u garena`
 
 ## Using script
 ```bash
-curl https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/config.py | python
+./lol-x86_64.AppImage config
 ```
-
-Change the default Executable in Riot LOL(the default LOL Installation for Lutris) to **RiotClientServices.exe** (sorry [abiswas97](https://github.com/abiswas97), **LeagueClient.exe** does work after 11.18 update) from the LOL-Garena installed location. 
 
 ## Manual:
 
@@ -154,19 +158,11 @@ Change the above directory to the one below(How it should look like for Garena L
 > /home/nhubao/Games/garena/drive_c/Garena/Games/32771/Riot Client/RiotClientServices.exe
 
 ![Lutris setting](images/lutris_riot_client.png)
-# Installing the necessary scripts
-* You can either directly download this repository by downloading the .zip/.tar.gz file and extracting it 
-
-OR
-
-```bash
-git clone https://github.com/nhubaotruong/league-of-legends-linux-garena-script.git
-```
 # Start the game
 * Start Garena
-* Open terminal, ```cd``` into the directory where you have saved this repository(Ex: /home/nhubao/league-of-legends-linux-garena-script-main) and run the following script:
-```
-python3 lol.py
+* Open terminal, ```cd``` into the directory where you have the AppImage and run
+```bash
+./lol-x86_64.AppImage
 ```
 * Select "League of Legends" in the Garena client and press **Play**
 * The launch should be nearly instantaneous if all steps have been followed correctly.
@@ -195,10 +191,6 @@ python3 lol.py
 1. Use `lutris-ge-lol-*` from lutris (Here, `*` signifies the latest version and release)
 - Go to `Manage runners` --> `Manage Versions` and install the latest `lutris-ge-lol`
 - Change the wine version of LOL( `Configure`--> `Runner Options` --> `Wine Version`) to `lutris-ge-lol-*`
-
-2. Custom `wine-lol`
-- It currently only have prebuilt for Ubuntu/Debian based and PKGBUILD for arch based: https://github.com/ekistece/wine-lol
-- After installing both `wine-lol` and `wine-lol-glibc`, change the wine version of LOL in lutris to custom and enter this path: `/opt/wine-lol/bin/wine`
 
 # Disclaimer
 * If the game crash with some message that saids `core dump...` just press `OK` and wait a bit, the game will continue at the exact state
