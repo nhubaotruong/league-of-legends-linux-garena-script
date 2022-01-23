@@ -1,4 +1,4 @@
-## For the old python script, checkout branch [`main-python`](https://github.com/nhubaotruong/league-of-legends-linux-garena-script/tree/main-python). This is now using an AppImage file (bash script inside) zero dependency
+## For the old python script, checkout branch [`main-python`](https://github.com/nhubaotruong/league-of-legends-linux-garena-script/tree/main-python). This is now using an AppImage file (bash script inside) for zero dependency
 ---
 ## Help wanted: Please help me with the required libs on Ubuntu, Fedora, Solus, etc... and testing with NVIDIA gpus (on laptop and desktop). I'm only familiar with Arch libs and AMD gpus (Intel should be similar)
 ---
