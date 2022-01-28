@@ -38,12 +38,12 @@ case "$1" in
     ;;
 "config")
     GARENA_WINE_PREFIX="$($HERE/usr/bin/sqlite3 "$LUTRIS_DB" "SELECT directory FROM games WHERE slug='garena'")"
-    if [ $GARENA_WINE_PREFIX = "" ]; then
+    if [ "$GARENA_WINE_PREFIX" = "" ]; then
         echo "No Garena install from lutris found"
         exit
     fi
     EXEC_PATH="$(find "$GARENA_WINE_PREFIX" -type f -name "$RIOT_SERVICES_EXE")"
-    if [ $EXEC_PATH = "" ]; then
+    if [ "$EXEC_PATH" = "" ]; then
         echo "Garena LOL isn't installed in "$GARENA_WINE_PREFIX""
         exit
     fi
