@@ -36,7 +36,6 @@ def main():
                 "https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/fixes/12.5/launchhelper2.sh"
             ).text
         )
-        os.chmod(launchhelper2_sh_path, stat.S_IEXEC)
 
     print("Downloading launchhelper2.py")
     with open(launchhelper2_py_path, "w+", encoding="utf-8") as f:
@@ -45,7 +44,6 @@ def main():
                 "https://raw.githubusercontent.com/CakeTheLiar/launchhelper/master/launchhelper2.py"
             ).text
         )
-        os.chmod(launchhelper2_py_path, stat.S_IEXEC)
 
     print("Downloading injector.py")
     with open(injector_py_path, "w+", encoding="utf-8") as f:
@@ -54,7 +52,6 @@ def main():
                 "https://raw.githubusercontent.com/CakeTheLiar/launchhelper/master/injector.py"
             ).text
         )
-        os.chmod(injector_py_path, stat.S_IEXEC)
 
     print(f"Updating {LUTRIS_LOL_CONFIG_FILE} with new prelaunch_command")
 
@@ -68,6 +65,9 @@ def main():
     )
     with open(LUTRIS_LOL_CONFIG_FILE, "w+", encoding="utf-8") as f:
         f.write(data_fixes)
+    
+    print("Please install some python dependencies as the fixes requires it")
+    print("pip install psutil frida")
 
 
 if __name__ == "__main__":
