@@ -30,7 +30,7 @@ def main():
     injector_py_path = os.path.join(directory, "injector.py")
 
     print("Downloading launchhelper2.sh")
-    with open(launchhelper2_sh_path, "w", encoding="utf-8") as f:
+    with open(launchhelper2_sh_path, "w+", encoding="utf-8") as f:
         f.write(
             requests.get(
                 "https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/fixes/12.5/launchhelper2.sh"
@@ -39,7 +39,7 @@ def main():
         os.chmod(launchhelper2_sh_path, stat.S_IEXEC)
 
     print("Downloading launchhelper2.py")
-    with open(launchhelper2_py_path, "w", encoding="utf-8") as f:
+    with open(launchhelper2_py_path, "w+", encoding="utf-8") as f:
         f.write(
             requests.get(
                 "https://raw.githubusercontent.com/CakeTheLiar/launchhelper/master/launchhelper2.py"
@@ -48,7 +48,7 @@ def main():
         os.chmod(launchhelper2_py_path, stat.S_IEXEC)
 
     print("Downloading injector.py")
-    with open(injector_py_path, "w", encoding="utf-8") as f:
+    with open(injector_py_path, "w+", encoding="utf-8") as f:
         f.write(
             requests.get(
                 "https://raw.githubusercontent.com/CakeTheLiar/launchhelper/master/injector.py"
@@ -66,7 +66,7 @@ def main():
         f"prelaunch_command: {launchhelper2_sh_path}\n",
         data,
     )
-    with open(LUTRIS_LOL_CONFIG_FILE, "w", encoding="utf-8") as f:
+    with open(LUTRIS_LOL_CONFIG_FILE, "w+", encoding="utf-8") as f:
         f.write(data_fixes)
 
 
