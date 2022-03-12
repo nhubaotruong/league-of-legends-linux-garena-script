@@ -36,6 +36,8 @@ def main():
                 "https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/fixes/12.5/launchhelper2.sh"
             ).text
         )
+    launchhelper2_sh_st = os.stat(launchhelper2_sh_path)
+    os.chmod(launchhelper2_sh_path, launchhelper2_sh_st.st_mode | stat.S_IEXEC)
 
     print("Downloading launchhelper2.py")
     with open(launchhelper2_py_path, "w+", encoding="utf-8") as f:
@@ -65,7 +67,7 @@ def main():
     )
     with open(LUTRIS_LOL_CONFIG_FILE, "w+", encoding="utf-8") as f:
         f.write(data_fixes)
-    
+
     print("Please install some python dependencies as the fixes requires it")
     print("pip install psutil frida")
 
