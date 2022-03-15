@@ -1,7 +1,5 @@
 ## Fixes for when a new LOL patch broke the game [`here`](./fixes/README.md)
 ---
-## For the old python script, checkout branch [`main-python`](https://github.com/nhubaotruong/league-of-legends-linux-garena-script/tree/main-python). This is now using an AppImage file (bash script inside) for zero dependency
----
 ## Please note that you are using this project on your own discretion, we don't hold any responsibility for any actions taken on you/on your account
 ---
 ## Those who cannot start LOL after the 11.17 update check here: [Update to newer wine-lol version](#update-new-wine-lol)
@@ -66,16 +64,12 @@ sudo dnf groupinstall "Development Tools"
 ```
 # Install Lutris, Garena, LOL
 - Follow Lutris official docs here: https://lutris.net/downloads/ to install lutris on your distro
-- Download the latest AppImage file from https://github.com/nhubaotruong/league-of-legends-linux-garena-script/releases.
-- Give it execute permission
+- Run this script and follow the output
 ```bash
-chmod +x lol-x86_64.AppImage
-```
-- Run
-```bash
-./lol-x86_64.AppImage install
+curl https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/install.py | python
 ```
 After finishing each step, close all lutris windows
+- Download the `lol.py` script
 
 # Install LOL from Garena
 Open Garena from lutris and install LOL like you normally do on Windows. 
@@ -146,7 +140,7 @@ For Ex: `/home/nhubao/Games/garena-vn/drive_c/fuck u garena`
 
 ## Using script
 ```bash
-./lol-x86_64.AppImage config
+curl https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/config.py | python
 ```
 
 ## Manual:
@@ -159,10 +153,11 @@ Change the above directory to the one below(How it should look like for Garena L
 
 ![Lutris setting](images/lutris_riot_client.png)
 # Start the game
+* Download the `lol.py` script
 * Start Garena
-* Open terminal, ```cd``` into the directory where you have the AppImage and run
+* Open terminal, ```cd``` into the directory where you have the `lol.py` and run
 ```bash
-./lol-x86_64.AppImage
+python lol.py
 ```
 * Select "League of Legends" in the Garena client and press **Play**
 * The launch should be nearly instantaneous if all steps have been followed correctly.

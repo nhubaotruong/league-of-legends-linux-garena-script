@@ -1,0 +1,137 @@
+{
+    "count": 1,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "id": 23547,
+            "game_id": 2424,
+            "game_slug": "league-of-legends",
+            "name": "League of Legends",
+            "year": 2009,
+            "user": "kj",
+            "runner": "wine",
+            "slug": "league-of-legends-standard-launch-help",
+            "version": "Standard (Launch  Helper)",
+            "description": "IMPORTANT: The game will take a long time to start, but it's normal, just wait!IMPORTANT: After install, wait for the 2GB download finish, then close the riot client to finish the installation.This is a compilation of the contributions from r/leagueoflinux reddit forum and some other minor fixes.Special thanks for u/yobbo2020 for the diagnosis and u/FakedCake for the \"launchhelper\" script.",
+            "notes": "- Do not connect or launch game during setup, close the client once it reaches the login screen.\r\n- After the Lutris installer completes, run the game and it will run the Riot Client, which will allow you to install and play the game.\r\n- This installer is international, the game will be available in your native language after install\r\n- The game will take a lot of time to launch, after login you will obtain a black rectangle during several minutes. So... wait.\r\n- If your cursor does not show correct icon, switch to the \"Interface\" settings and turn the Legacy cursor to \"off\" and \"on\"\r\n- You need to install these packages before launching this installer: zenity, openssl",
+            "created_at": "2020-09-27T08:34:48.149000Z",
+            "updated_at": "2022-01-22T23:04:57.503273Z",
+            "draft": false,
+            "published": true,
+            "published_by": 51687,
+            "rating": "",
+            "steamid": 20590,
+            "gogid": null,
+            "gogslug": "",
+            "humbleid": "",
+            "humblestoreid": "",
+            "humblestoreid_real": "",
+            "script": {
+                "files": [
+                    {
+                        "script1": "https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/fixes/12.5/launchhelper2.sh"
+                    },
+                    {
+                        "script2": "https://raw.githubusercontent.com/CakeTheLiar/launchhelper/master/launchhelper2.py"
+                    },
+                    {
+                        "script3": "https://raw.githubusercontent.com/CakeTheLiar/launchhelper/master/injector.py"
+                    }
+                ],
+                "game": {
+                    "args": "",
+                    "exe": "",
+                    "prefix": "$GAMEDIR"
+                },
+                "installer": [
+                    {
+                        "task": {
+                            "description": "Creating Wine prefix",
+                            "name": "create_prefix",
+                            "prefix": "$GAMEDIR"
+                        }
+                    },
+                    {
+                        "task": {
+                            "name": "winekill",
+                            "prefix": "$GAMEDIR"
+                        }
+                    },
+                    {
+                        "task": {
+                            "key": "GrabFullScreen",
+                            "name": "set_regedit",
+                            "path": "HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver",
+                            "prefix": "$GAMEDIR",
+                            "value": "Y"
+                        }
+                    },
+                    {
+                        "task": {
+                            "key": "UseXVidMode",
+                            "name": "set_regedit",
+                            "path": "HKEY_CURRENT_USER\\Software\\Wine\\X11 Driver",
+                            "prefix": "$GAMEDIR",
+                            "value": "N"
+                        }
+                    },
+                    {
+                        "chmodx": "script1"
+                    },
+                    {
+                        "chmodx": "script2"
+                    },
+                    {
+                        "chmodx": "script3"
+                    },
+                    {
+                        "copy": {
+                            "dst": "$GAMEDIR",
+                            "src": "script1"
+                        }
+                    },
+                    {
+                        "copy": {
+                            "dst": "$GAMEDIR",
+                            "src": "script2"
+                        }
+                    },
+                    {
+                        "copy": {
+                            "dst": "$GAMEDIR",
+                            "src": "script3"
+                        }
+                    },
+                    {
+                        "task": {
+                            "key": "background",
+                            "name": "set_regedit",
+                            "path": "HKEY_CURRENT_USER\\Control Panel\\Colors\\",
+                            "prefix": "$GAMEDIR",
+                            "type": "REG_SZ",
+                            "value": "40 40 40"
+                        }
+                    }
+                ],
+                "require-binaries": "zenity, openssl",
+                "system": {
+                    "disable_compositor": false,
+                    "env": {
+                        "DXVK_LOG_LEVEL": "none",
+                        "DXVK_STATE_CACHE_PATH": "$GAMEDIR",
+                        "STAGING_SHARED_MEMORY": 1,
+                        "WINE_LARGE_ADDRESS_AWARE": 1,
+                        "__GL_SHADER_DISK_CACHE": 1,
+                        "__GL_SHADER_DISK_CACHE_PATH": "$GAMEDIR"
+                    },
+                    "prelaunch_command": "$GAMEDIR/launchhelper2.sh"
+                },
+                "wine": {
+                    "MouseWarpOverride": "enable",
+                    "version": "lutris-ge-lol-7.0-1-x86_64"
+                }
+            }
+        }
+    ]
+}
