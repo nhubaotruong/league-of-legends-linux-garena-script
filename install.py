@@ -16,13 +16,14 @@ def main():
 
     print("Close all lutris windows after everything is done\n")
 
-    if shutil.which("pip"):
+    if shutil.which("pip3"):
         print("Installing python dependencies to user directory")
-        os.system("pip install --user psutil frida pyyaml")
+        os.system("pip3 install --user psutil frida pyyaml")
     else:
         print("Please install python-pip from your distro repo and run")
-        print("pip install --user psutil frida pyyaml")
+        print("pip3 install --user psutil frida pyyaml")
 
+    print("")
     print("Open Garena and install LOL, just left the install path as default\n")
     print("After it is done instaling, run\n")
     print(
