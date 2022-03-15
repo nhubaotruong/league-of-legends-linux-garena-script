@@ -106,7 +106,8 @@
                     "MouseWarpOverride": "enable",
                     "version": "lutris-7.1-x86_64",
                     "esync": true,
-                    "fsync": false
+                    "fsync": false,
+                    "dxvk": false
                 }
             }
         }
