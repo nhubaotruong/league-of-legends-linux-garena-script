@@ -28,17 +28,6 @@
             "humblestoreid": "",
             "humblestoreid_real": "",
             "script": {
-                "files": [
-                    {
-                        "script1": "https://raw.githubusercontent.com/nhubaotruong/league-of-legends-linux-garena-script/main/fixes/12.5/launchhelper2.sh"
-                    },
-                    {
-                        "script2": "https://raw.githubusercontent.com/CakeTheLiar/launchhelper/master/launchhelper2.py"
-                    },
-                    {
-                        "script3": "https://raw.githubusercontent.com/CakeTheLiar/launchhelper/master/injector.py"
-                    }
-                ],
                 "game": {
                     "args": "",
                     "exe": "",
@@ -77,33 +66,6 @@
                         }
                     },
                     {
-                        "chmodx": "script1"
-                    },
-                    {
-                        "chmodx": "script2"
-                    },
-                    {
-                        "chmodx": "script3"
-                    },
-                    {
-                        "copy": {
-                            "dst": "$GAMEDIR",
-                            "src": "script1"
-                        }
-                    },
-                    {
-                        "copy": {
-                            "dst": "$GAMEDIR",
-                            "src": "script2"
-                        }
-                    },
-                    {
-                        "copy": {
-                            "dst": "$GAMEDIR",
-                            "src": "script3"
-                        }
-                    },
-                    {
                         "task": {
                             "key": "background",
                             "name": "set_regedit",
@@ -124,12 +86,12 @@
                         "WINE_LARGE_ADDRESS_AWARE": 1,
                         "__GL_SHADER_DISK_CACHE": 1,
                         "__GL_SHADER_DISK_CACHE_PATH": "$GAMEDIR"
-                    },
-                    "prelaunch_command": "$GAMEDIR/launchhelper2.sh"
+                    }
                 },
                 "wine": {
                     "MouseWarpOverride": "enable",
-                    "version": "lutris-ge-lol-7.0-1-x86_64"
+                    "version": "lutris-7.2-2-x86_64",
+                    "fsync": true
                 }
             }
         }
