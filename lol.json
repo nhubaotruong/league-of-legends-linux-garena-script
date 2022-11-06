@@ -90,7 +90,7 @@
                 },
                 "wine": {
                     "MouseWarpOverride": "enable",
-                    "version": "lutris-7.2-2-x86_64",
+                    "version": "lutris-ge-lol-7.0-5-x86_64",
                     "fsync": true
                 }
             }
