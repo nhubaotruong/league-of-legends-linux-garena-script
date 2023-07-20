@@ -1,13 +1,13 @@
 {
-  "contact": "",
+  "contact": "r/vietnamplace on discord",
   "templates": [
     {
-      "name": "VN FLAG",
+      "name": "R/VNPLACE",
       "sources": [
-        "https://cdn-153.anonfiles.com/p8wela36z9/682344db-1689872734/Flag_of_Vietnam.svg+%281%29.png"
+        "https://i.imgur.com/z87uP3H.png"
       ],
-      "x": 400,
-      "y": 335
+      "x": 901,
+      "y": 836
     }
   ],
   "whitelist": [],
