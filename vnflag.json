@@ -1,0 +1,15 @@
+{
+  "contact": "r/placevietnam on discord",
+  "templates": [
+    {
+      "name": "r/place vietnam",
+      "sources": [
+        "https://i.imgur.com/6tWUc0G.png"
+      ],
+      "x": 901,
+      "y": 836
+    }
+  ],
+  "whitelist": [],
+  "blacklist": []
+}
